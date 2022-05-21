@@ -3,8 +3,8 @@ import { useTheme } from '../context';
 import { THEME_LIGHT } from './../const/action';
 
 interface Props {
-    text : string;
-    className? : string;
+    text : string
+    className? : string
 }
 
 const NavList : React.FC<Props> = ({text, className = ""}) => {

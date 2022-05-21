@@ -1,0 +1,35 @@
+.toggle-link > *{
+    transition: all 250ms ease-in-out;
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    -ms-transition: all 250ms ease-in-out;
+    -o-transition: all 250ms ease-in-out;
+}
+
+.toggle-link > :nth-child(2n + 1){
+    transition-delay: 150ms;
+}
+
+.toggle-link > :nth-child(2){
+    transition-delay: 50ms;
+}
+
+.toggle-link.active>:nth-child(1){
+    transform-origin: center;
+    transform: translateY(8px) rotate(135deg);
+    -webkit-transform: translateY(8px) rotate(135deg);
+    -moz-transform: translateY(8px) rotate(135deg);
+    -ms-transform: translateY(8px) rotate(135deg);
+    -o-transform: translateY(8px) rotate(135deg);
+}
+.toggle-link.active>:nth-child(2){
+    opacity: 0;
+}
+.toggle-link.active>:nth-child(3){
+    transform-origin: center;
+    transform: translateY(-8px) rotate(-135deg) ;
+    -webkit-transform: translateY(-8px) rotate(-135deg) ;
+    -moz-transform: translateY(-8px) rotate(-135deg) ;
+    -ms-transform: translateY(-8px) rotate(-135deg) ;
+    -o-transform: translateY(-8px) rotate(-135deg) ;
+}
