@@ -11,7 +11,7 @@ export default function Main(){
 
   return (
     <div className={`${colorTheme} container mx-auto flex-1 `}>
-      <section className='h-screen flex'>
+      <section className='h-screen flex flex-col lg:flex-row'>
       {/* left */}
       <div className='h-full flex flex-col justify-center flex-1'>
         <h1 className='text-6xl font-bold text-orange-400'>Hello</h1>

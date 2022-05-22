@@ -7,7 +7,7 @@
 }
 
 .toggle-link > :nth-child(2n + 1){
-    transition-delay: 150ms;
+    transition-delay: 100ms;
 }
 
 .toggle-link > :nth-child(2){

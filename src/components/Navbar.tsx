@@ -6,17 +6,16 @@ import { THEME_LIGHT } from './../const/action'
 import NavList from './NavList'
 import ThemeToggle from './ThemeToggle'
 import BurgerToggle from './BurgerToggle'
+import Sidebar from './Sidebar'
 
 const Navbar = () => {
     const [toggleOpen, setToggleOpen] = React.useState<boolean>(false)
-    const [windowSize, setWindowSize] = React.useState<number>(0)
     const { state } = useTheme()
     const { theme } = state
 
     React.useEffect(() => {
       const handleResize = () : void => {
-          setWindowSize(window.innerWidth)
-          windowSize < 984 && setToggleOpen(false)
+          window.innerWidth < 984 && setToggleOpen(false)
       }
       window.addEventListener('resize', handleResize)
       return () => window.removeEventListener('resize', handleResize)
@@ -25,11 +24,7 @@ const Navbar = () => {
 
     return(
         <>
-            <div className={`${toggleOpen ? 'inline' : 'hidden'} absolute z-[10] bg-green-500 inset-x-0 h-4/6 `}>
-                <div className="w-full h-4/6"></div>
-                <div></div>
-                <div></div>
-            </div>
+            <Sidebar toggleOpen={toggleOpen} />
             <nav className="py-4 lg:py-10 absolute top-0 inset-x-0">
                 <div className='container mx-auto'>
                     <div className="flex justify-between items-center relative">
