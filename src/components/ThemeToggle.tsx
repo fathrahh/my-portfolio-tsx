@@ -5,8 +5,7 @@ import { useTheme } from '../context'
 import { THEME_LIGHT } from '../const/action'
 
 function ThemeToggle () {   
-    const { state , dispatch } = useTheme()
-    const { theme } = state
+    const { state : { theme } , dispatch } = useTheme()
 
     return (
         <div 

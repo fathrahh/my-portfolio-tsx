@@ -23,6 +23,10 @@ module.exports = {
     extend: {
       boxShadow: {
         'all' : '0 0px 15px 2px'
+      },
+      colors:{
+        "dark-base" : "#1A1A1A",
+        "dark" : "#0F0F0F"
       }
     },
   },

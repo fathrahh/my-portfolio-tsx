@@ -6,10 +6,9 @@ import Footer from './components/Footer';
 
 
 function App() {
-  const { state } = useTheme()
-
+  // const { state : { theme } } = useTheme()
   return (
-    <div className={`${state.theme === "LIGHT" ? "bg-slate-200" : "bg-black/90"} flex flex-col relative`}>
+    <div className={`flex flex-col relative`}>
       <Navbar />
       <Main />
       <Footer/>

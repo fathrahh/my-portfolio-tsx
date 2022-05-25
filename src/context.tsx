@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { THEME_LIGHT, THEME_DARK } from './const/action';
 
-type State = {theme: string}
+type State = { theme: string }
 type Dispatch = (action: string) => void
 type ThemeProviderProps = {children : React.ReactNode}
 
 const initialState : State = {
-    theme : "LIGHT"
+    theme : "DARK"
 }
 
 const ThemeContext = React.createContext<{state: State, dispatch: Dispatch} | undefined >(undefined)
