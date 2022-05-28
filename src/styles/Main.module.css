@@ -1,0 +1,20 @@
+.text-linear-gradient{
+    background: linear-gradient(45deg,rgb(208, 147, 32),rgb(208, 202, 32),rgb(196, 208, 32),rgb(132, 208, 32),rgb(100, 208, 32),rgb(32, 208, 126),rgb(32, 208, 164),rgb(32, 146, 208),rgb(32, 47, 208),rgb(173, 32, 208), rgb(208, 32, 161), rgb(208, 32, 61),rgb(208, 32, 38));
+    background-clip: text;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 15s ease-in-out infinite;
+    -webkit-animation: animate 15s ease-in-out infinite;
+}
+
+@keyframes animate{
+    0%{
+        filter: hue-rotate(0deg);
+        -webkit-filter: hue-rotate(0deg);
+}
+    100%{
+        filter: hue-rotate(-360deg);
+        -webkit-filter: hue-rotate(-360deg);
+}
+}

@@ -22,7 +22,8 @@ module.exports = {
     },
     extend: {
       boxShadow: {
-        'all' : '0 0px 15px 2px'
+        'all' : '0 0 15px 2px',
+        'all-sm' : '0 0 12px 4px' 
       },
       colors:{
         "dark-base" : "#1A1A1A",
