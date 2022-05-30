@@ -10,18 +10,13 @@ import { baseColorTheme } from './utils/baseColorHelpers'
 
 function App() {
   const { state: { theme } } = useTheme()
-
-  const darkMode = "bg-dark-base"
-  const colorTheme = baseColorTheme(theme, darkMode)
+  const colorTheme = baseColorTheme(theme, "bg-dark-base")
 
   return (
     <Router>
-      <div className={`${colorTheme} flex relative min-h-screen overflow-x-hidden`}>
+      <div className={`${colorTheme} h-screen flex relative  overflow-x-hidden`}>
         <Sidebar />
-        <div className='flex-1'>
-          <Main />
-          <Footer />
-        </div>
+        <Main />
       </div>
     </Router>
   );

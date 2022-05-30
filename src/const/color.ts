@@ -1,0 +1,1 @@
+export const codeBlue = "#78DCE8"

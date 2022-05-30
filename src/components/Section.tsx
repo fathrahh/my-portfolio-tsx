@@ -8,10 +8,8 @@ interface SectionProps {
 const Section: React.FC<SectionProps> = ({ children, className, ...rest }) => {
   //   Light & Dark Mode logic
   return (
-    <section className={`min-h-screen`} {...rest}>
-      <div className={`${className} container mx-auto`}>
-        {children}
-      </div>
+    <section className={`${className} h-max container mx-auto min-h-screen`}{...rest}>
+      {children}
     </section>
   )
 }

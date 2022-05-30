@@ -26,6 +26,13 @@ module.exports = {
         'all-sm' : '0 0 12px 4px' 
       },
       colors:{
+        "code-muted" : "#727072",
+        "code-dark" : "#2D2A2E",
+        "code-blue" : "#78DCE8",
+        "code-green" : "#7DCE76",
+        "code-red" : "#9F485F",
+        "code-purple" : "#AB9DF2",
+        "code-white" : "#FCFCFA",
         "dark-base" : "#1A1A1A",
         "dark" : "#0F0F0F"
       }
