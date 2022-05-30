@@ -3,7 +3,7 @@ import { BiMoon, BiSun } from 'react-icons/bi'
 
 import { useTheme } from '../context'
 import { THEME_LIGHT } from '../const/action'
-import { baseColorTheme, reverseColorTheme } from '../utils/baseColorHelpers'
+import { baseColorTheme } from '../utils/baseColorHelpers'
 
 type ThemeToggleProps = {
     isOpen: boolean

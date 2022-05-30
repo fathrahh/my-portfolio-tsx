@@ -12,9 +12,9 @@ const About = () => {
 
     return (
         <Section className={`${textTheme} py-4`} odd={false}>
-            <h3 className='text-center font-bold'>About Me</h3>
+            <h3 className='text-center text-3xl py-5  font-bold'>About Me</h3>
             <div>
-                all about us
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores obcaecati minima quos iure quidem dicta vitae ipsum fugit deserunt tenetur.</p>
             </div>
         </Section>
     )

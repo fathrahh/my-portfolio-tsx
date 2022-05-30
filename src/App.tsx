@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
 import Main from './components/Main'
 import Footer from './components/Footer'
 import { useTheme } from './context'
@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <div className={`${colorTheme} flex relative min-h-screen overflow-x-hidden`}>
-        <Navbar />
+        <Sidebar />
         <div className='flex-1'>
           <Main />
           <Footer />

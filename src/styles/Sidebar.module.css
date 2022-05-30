@@ -1,70 +1,39 @@
-/* .sidebar > * {
-    width: 0;
-    height:100%;
-} 
-
-.sidebar > :nth-child(1){
-    transition: all 225ms ease-in-out;
-    -webkit-transition: all 225ms ease-in-out;
-    -moz-transition: all 225ms ease-in-out;
-    -ms-transition: all 225ms ease-in-out;
-    -o-transition: all 225ms ease-in-out;
-}
-.sidebar > :nth-child(2){
-    transition: all 300ms ease-in-out;
-    -webkit-transition: all 300ms ease-in-out;
-    -moz-transition: all 300ms ease-in-out;
-    -ms-transition: all 300ms ease-in-out;
-    -o-transition: all 300ms ease-in-out;
-}
-.sidebar > :nth-child(3){
-    transition: all 425ms ease-in-out;
-    -webkit-transition: all 425ms ease-in-out;
-    -moz-transition: all 425ms ease-in-out;
-    -ms-transition: all 425ms ease-in-out;
-    -o-transition: all 425ms ease-in-out;
-}
-
-.sidebar.open > * {
-    right: 0;
-    width: 100%;
-    height: 100%;
-} */
-
 .arrow :first-child {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
+    right: 0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
 }
 
 .arrow :last-child {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-}
-
-.arrow .open{
     right: 0;
-}
-
-.arrow .open:first-child{
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-}
-
-.arrow .open:last-child{
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
+}
+
+.arrow .open{
+    left: 0;
+}
+
+.arrow .open:first-child{
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+.arrow .open:last-child{
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
 }
 
 .sidebar-list{

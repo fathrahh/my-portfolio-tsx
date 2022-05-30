@@ -1,30 +1,61 @@
 import * as React from 'react'
+import { FaHome, FaReact, FaUserAstronaut } from 'react-icons/fa'
+
+import { useTheme } from '../context'
+import { THEME_LIGHT } from '../const/action'
 import styles from './../styles/Sidebar.module.css'
+
 import SidebarList from './SidebarList'
+import ThemeToggle from './ThemeToggle'
+import { baseColorTheme, reverseColorTheme } from '../utils/baseColorHelpers'
 
+const Sidebar = () => {
+    const [toggleOpen, setToggleOpen] = React.useState<boolean>(false)
+    const { state: { theme } } = useTheme()
+    const shadowTheme = baseColorTheme(theme, "shadow-dark-base", "shadow-gray-400")
+    const colorTheme = baseColorTheme(theme)
+    const reverseTheme = reverseColorTheme(theme)
 
-interface SidebarProps {
-    toggleOpen: boolean
-}
+    const handleToggle = () => setToggleOpen(!toggleOpen)
 
-const Sidebar: React.FC<SidebarProps> = ({ toggleOpen }) => {
+    React.useEffect(() => {
+        const handleResize = (): void => {
+            window.innerWidth < 984 && setToggleOpen(false)
+        }
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
     return (
-        <aside className={`${toggleOpen ? 'w-full' : 'w-0'} right-0 block lg:hidden absolute z-30 overflow-hidden h-screen transition-all duration-200`}>
-            <div className={`relative w-screen h-full ${styles['sidebar']} ${toggleOpen && styles['open']}`}>
-                <div className="bg-black absolute"></div>
-                <div className="bg-orange-400 absolute"></div>
-                <div className="bg-green-400 absolute flex flex-col items-center py-14 space-y-5">
-                    <SidebarList text="Home" />
-                    <SidebarList text="About Me" />
-                    <SidebarList text="Contact " />
+        <aside className={`py-3 lg:fixed sticky top-0 bottom-0 rounded-r-lg ${colorTheme} z-10 shadow-all-sm`}>
+            <div className="flex flex-col relative h-full ">
+                <div
+                    className='self-end mr-5 my-4 cursor-pointer'
+                    onClick={handleToggle}
+                >
+                    <div className={`${styles["arrow"]} rounded-lg w-5 h-1 ${reverseTheme} relative`}>
+                        {/* <div className={`absolute w-2 h-1 ${reverseTheme}`}></div> */}
+                        <div className={`${toggleOpen && styles["open"]} rounded-lg top-[calc(50%_+_2px)]  absolute w-3 h-1 ${reverseTheme}`}></div>
+                        <div className={`${toggleOpen && styles["open"]} rounded-lg bottom-[calc(50%_+_2px)]  absolute w-3   h-1 ${reverseTheme}`}></div>
+                    </div>
                 </div>
+                <div className='text-center p-1'>
+                    <h1 className={`${theme === THEME_LIGHT ? "text-black" : "text-white"} cursor-pointer font-bold `}>
+                        <span className={`${toggleOpen ? "text-4xl" : "text-xl"} transition-all`}>M</span>
+                        <span className={`text-xl`}>F.</span>
+                    </h1>
+                </div>
+                <div className='h-8 items-center justify-center flex'>
+                    <ThemeToggle isOpen={toggleOpen} />
+                </div>
+                <ul className={`${toggleOpen ? "w-44" : "w-14"} overflow-hidden my-auto transition-all duration-300 text-md font-semibold`}>
+                    <SidebarList isOpen={toggleOpen} Icons={FaHome} text="Home" href="/" />
+                    <SidebarList isOpen={toggleOpen} Icons={FaUserAstronaut} text="About Me" href="/about" />
+                    <SidebarList isOpen={toggleOpen} Icons={FaReact} text="Skill" href="/skill" />
+                </ul>
             </div>
         </aside>
     )
 }
 
-Sidebar.defaultProps = {
-    toggleOpen: false
-}
-
-export default Sidebar
+export default Sidebar;

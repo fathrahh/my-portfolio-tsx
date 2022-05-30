@@ -1,13 +1,13 @@
 import React from 'react'
+import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import styles from './../styles/Main.module.css'
 
-import PictSVG2 from './../assets/images/sample-pict2.svg'
+import HomeImages from './../assets/images/HomeImages'
 import { useTheme } from '../context'
 import { baseColorTheme, reverseColorTheme } from '../utils/baseColorHelpers'
 
 import MyLink from '../components/MyLink'
 import Section from '../components/Section'
-import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import Button from '../components/Button'
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
                     <p className={`text-orange-500 my-2 ${styles['text-linear-gradient']}`}>  Fathurrahman</p>
                 </h1>
                 <div className='absolute w-72 h-72 right-1/3 translate-x-10 top-1/2 -translate-y-1/2 '>
-                    <img src={PictSVG2} alt="icon" />
+                    <HomeImages />
                 </div>
                 <div className={`${textTheme} flex gap-4`}>
                     <MyLink href='https://github.com/fathrahh'>
